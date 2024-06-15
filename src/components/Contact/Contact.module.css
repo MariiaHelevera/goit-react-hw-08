@@ -1,0 +1,18 @@
+.contactListItem {
+    flex-basis: calc((100% - 12px * 3) / 4);
+}
+
+.contactWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.contactInfo {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+}
