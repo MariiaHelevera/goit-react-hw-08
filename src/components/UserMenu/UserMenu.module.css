@@ -1,0 +1,36 @@
+.userMenuWrapper {
+    display: flex;
+    gap: 12px;
+}
+
+.userMenuGreating {
+    color:aliceblue;
+    padding: 6px 4px;
+}
+
+.username {
+    color: orange;
+}
+
+.logOutBtn {
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 16px;
+    border: none;
+    color: #ffffff;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logOutBtn:hover,
+.logOutBtn:focus {
+    background-color: orangered;
+}
+
+.logOutBtn:active {
+    background-color: orangered;
+}

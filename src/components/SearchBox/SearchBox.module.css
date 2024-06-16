@@ -4,5 +4,11 @@
 
 .searchInput {
     display: block;
-    width: 189px;
+    width: 510px;
+    background-color:white;
+    color: black;
+    outline: transparent;
+    border: 1px solid #252728;
+    border-radius: 4px;
+    padding: 6px;
 }

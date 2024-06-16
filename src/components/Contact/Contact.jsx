@@ -1,29 +1,40 @@
-import { HiUser, HiPhone } from 'react-icons/hi';
 import css from './Contact.module.css';
+import { HiUser, HiPhone } from 'react-icons/hi';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsOps';
+import { openModal } from '../../redux/modal/slice';
+import { actions } from '../../constants';
 
-const Contact = ({ contact }) => {
-    const dispatch = useDispatch();
+export default function Contact({ contact: { id, name, number } }) {
+  const dispatch = useDispatch();
 
-    return (
-    <li className={css.contactListItem}>
-        <div className={css.contactWrapper}>
-            <div>
-                <p className={css.contactInfo}>
-                    <HiUser size={20} /> {contact.name}
-                </p>
-                <p className={css.contactInfo}>
-                    <HiPhone size={20} /> {contact.number}
-                </p>
-            </div>
+  function handleDelete() {
+    dispatch(
+      openModal({
+        modalData: {
+          id,
+          name,
+          number,
+        },
+        actionType: actions.deleteContact,
+      })
+    );
+  }
 
-            <button type="button" onClick={() => dispatch(deleteContact(contact.id))}>
-                Delete
-            </button>
-        </div>
-    </li>
+  return (
+    <div className={css.contactListItemWrapper}>
+      <div>
+        <p className={css.userInfo}>
+          <HiUser size={20} /> <b> {name} </b>
+        </p>
+        <p className={css.userInfo}>
+          <HiPhone size={20} /> {number}
+        </p>
+      </div>
+      <div>
+        <button className={css.contactBtn} type="button" onClick={handleDelete}>
+          Delete
+        </button>
+      </div>
+    </div>
   );
-};
-
-export default Contact;
+}
