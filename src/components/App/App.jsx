@@ -1,5 +1,7 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Modal from '../Modal/Modal';
+import { Toaster } from 'react-hot-toast';
 import Loader from '../Loader/Loader';
 import Layout from '../Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
@@ -58,6 +60,8 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         </Suspense>
+        <Toaster />
+        <Modal />
     </Layout>
   )
 }

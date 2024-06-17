@@ -50,22 +50,4 @@ const deleteContact = createAsyncThunk(
   }
 );
 
-const editContact = createAsyncThunk(
-  'contacts/editContact',
-  async ({ id, ...contactData }, { rejectWithValue }) => {
-    try {
-      const promise = Axios.patch(`/contacts/${id}`, contactData);
-      toast.promise(promise, {
-        loading: 'Saving changes...',
-        success: `Changes have been saved`,
-        error: 'Could not update contact',
-      });
-      const response = await promise;
-      return response.data;
-    } catch {
-      return rejectWithValue('Failed to save changes.');
-    }
-  }
-);
-
-export { fetchContacts, addContact, deleteContact, editContact };
+export { fetchContacts, addContact, deleteContact };

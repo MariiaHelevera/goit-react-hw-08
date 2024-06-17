@@ -27,8 +27,8 @@ export const authInitialState = Object.freeze({
 
 export const modalInitialState = Object.freeze({
   isModalOpen: false,
-  actionType: '',
-  modalData: null,
+  actionType: null,
+  modalData: {},
 });
 
 export const contactsInitialState = Object.freeze({
@@ -44,21 +44,6 @@ export const actions = Object.freeze({
 });
 
 export const ContactSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, 'Too short!')
-    .max(50, 'Too long!')
-    .required('Required'),
-  number: Yup.string()
-    .matches(
-      /(?:([+]\d{1,4})[-.\s]?)?(?:[(](\d{1,3})[)][-.\s]?)?(\d{1,4})[-.\s]?(\d{1,4})[-.\s]?(\d{1,9})/g,
-      'Invalid phone number'
-    )
-    .min(7, 'Must be at least 7 characters long')
-    .max(50, 'Must be no more than 50 characters long')
-    .required('Required'),
-});
-
-export const EditSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, 'Too short!')
     .max(50, 'Too long!')

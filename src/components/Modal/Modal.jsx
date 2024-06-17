@@ -8,7 +8,6 @@ import {
   selectModalActionType,
 } from '../../redux/modal/selectors';
 import { closeModal } from '../../redux/modal/slice';
-import EditForm from '../EditForm/EditForm';
 
 export default function Modal() {
   ReactModal.setAppElement('#root');
@@ -27,7 +26,6 @@ export default function Modal() {
       className={css.modalContent}
       bodyOpenClassName={css.blockScroll}
     >
-      {modalActionType === actions.editContact && <EditForm />}
       {modalActionType === actions.logOut && (
         <ModalMarkup actionType={actions.logOut} />
       )}

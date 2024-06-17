@@ -4,7 +4,6 @@ import {
   fetchContacts,
   addContact,
   deleteContact,
-  editContact,
 } from './operations';
 import { logout } from '../auth/operations';
 
@@ -45,15 +44,6 @@ const contactsSlice = createSlice({
         );
       })
       .addCase(deleteContact.rejected, handleRejected)
-
-      .addCase(editContact.pending, handlePending)
-      .addCase(editContact.fulfilled, (state, action) => {
-        const contactIdx = state.items.findIndex(
-          contact => contact.id === action.payload.id
-        );
-        state.items.splice(contactIdx, 1, { ...action.payload });
-      })
-      .addCase(editContact.rejected, handleRejected)
 
       .addCase(logout.fulfilled, state => {
         state.items = [];

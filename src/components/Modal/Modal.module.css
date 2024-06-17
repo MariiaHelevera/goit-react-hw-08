@@ -18,11 +18,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 350px;
+    height: 150px;
     padding: 60px 20px;
-    background-color: #252728;
-    border-radius: 10px;
-    filter: drop-shadow(0 0 10px rgba(163, 0, 57, 0.7));
+    background-color: white;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.56));
     transition: transform 0.3s;
 }
 

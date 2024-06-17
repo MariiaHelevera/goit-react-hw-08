@@ -13,7 +13,7 @@ export const AuthNav = () => {
     <ul className={css.authNavList}>
       <li>
         <NavLink className={linkClasses} to="/register">
-          Registration
+          Sign up
         </NavLink>
       </li>
       <li>

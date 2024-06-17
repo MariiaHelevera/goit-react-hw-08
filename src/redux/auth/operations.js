@@ -85,17 +85,6 @@ const refreshUser = createAsyncThunk(
       try {
         setAuthToken(token);
         const promise = Axios('/users/current');
-        toast.promise(
-          promise,
-          {
-            loading: 'Loading user data',
-            success: `Loading complete!`,
-            error: 'Failed to upload user data',
-          },
-          {
-            id: 'refreshUser',
-          }
-        );
         const response = await promise;
         return response.data;
       } catch (error) {

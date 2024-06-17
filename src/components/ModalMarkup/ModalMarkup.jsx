@@ -28,7 +28,7 @@ export default function ModalMarkup({ actionType }) {
     case actions.logOut: {
       return (
         <div className={css.popUp}>
-          <p className={css.question}>Do you really want to log out?</p>
+          <p className={css.question}>Are you sure you want to log out?</p>
           <div className={css.answersWrapper}>
             <button className={css.btn} onClick={handleLogOut}>
               Yes
@@ -46,7 +46,7 @@ export default function ModalMarkup({ actionType }) {
         <div className={css.popUp}>
           <div className={css.deleteConfirmation}>
             <p className={css.question}>
-              Do you really want to delete this contact?
+              Delete this contact?
             </p>
             <b className={css.contactName}>
               {contact.name} - ({contact.number})
